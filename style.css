@@ -61,6 +61,11 @@ hr {
   border-top: 4px solid var(--color-faded-gray);
 }
 
+/* thinner line directly below the header */
+header + hr {
+  border-top-width: 2px;
+}
+
 /* ---------- Header ---------- */
 header {
   flex: none;
@@ -88,8 +93,6 @@ main {
   border: var(--border) solid var(--color-faded-gray);
   border-bottom-width: 6px;
   background: var(--color-paper-white);
-  /* flat offset shadow: depth without blur */
-  box-shadow: 10px 10px 0 var(--color-storybook-green);
   text-align: center;
 }
 
@@ -172,7 +175,7 @@ main p {
 }
 
 #generate-btn:hover {
- background: var(--color-fresh-leaf);
+  background: var(--color-fresh-leaf);
 }
 
 #next-btn {
@@ -207,7 +210,7 @@ main p {
 footer {
   flex: none;
   padding: clamp(16px, 2.6vh, 28px) clamp(24px, 4vw, 64px);
-  background: var(--color-eager-green);
+  background: var(--color-green-shade);
   color: var(--color-paper-white);
   text-align: center;
 }
@@ -224,9 +227,6 @@ footer p {
 @media (max-width: 640px) {
   .btn {
     width: 100%;
-  }
-  main {
-    box-shadow: 6px 6px 0 var(--color-storybook-green);
   }
 }
 
