@@ -4,18 +4,18 @@ const max_Number = 60;
 
 let current_Number = null;
 const usedNumbers = new Set();
-const skipNumbers = new Set([6,26,31,46]);
+
 
 
 const numberDisplay = document.getElementById("number-display");
 const generateB = document.getElementById("generate-btn");
 const nextB = document.getElementById("next-btn");
 const resetB = document.getElementById("reset-btn");
-
+const sn = new Set([6,26]);
 
 function generateRandom() {
     
-    if (usedNumbers.size ===(max_Number - min_Number + 1)-skipNumbers.size ) {
+    if (usedNumbers.size ===(max_Number - min_Number + 1)-sn.size ) {
         numberDisplay.textContent = "All numbers selected!";
         generateB.disabled = true;
         nextB.disabled = true;
@@ -28,7 +28,7 @@ function generateRandom() {
         randomNumber = Math.floor(
             Math.random() * (max_Number - min_Number + 1)
         ) + min_Number;
-    } while (usedNumbers.has(randomNumber) || skipNumbers.has(randomNumber));
+    } while (usedNumbers.has(randomNumber) || sn.has(randomNumber));
 
     
     usedNumbers.add(randomNumber);
