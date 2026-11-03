@@ -3,7 +3,9 @@ const min_Number = 2;
 const max_Number = 60;
 
 let current_Number = null;
-const usedNumbers = new Set();
+const usedNumbers = new Set(31,46.
+    
+);
 
 // Select HTML elements
 const numberDisplay = document.getElementById("number-display");
