@@ -11,11 +11,11 @@ const numberDisplay = document.getElementById("number-display");
 const generateB = document.getElementById("generate-btn");
 const nextB = document.getElementById("next-btn");
 const resetB = document.getElementById("reset-btn");
-const sn = new Set([6,26]);
+
 
 function generateRandom() {
     
-    if (usedNumbers.size ===(max_Number - min_Number + 1)-sn.size ) {
+    if (usedNumbers.size ===max_Number - min_Number + 1 ) {
         numberDisplay.textContent = "All numbers selected!";
         generateB.disabled = true;
         nextB.disabled = true;
@@ -28,7 +28,7 @@ function generateRandom() {
         randomNumber = Math.floor(
             Math.random() * (max_Number - min_Number + 1)
         ) + min_Number;
-    } while (usedNumbers.has(randomNumber) || sn.has(randomNumber));
+    } while (usedNumbers.has(randomNumber));
 
     
     usedNumbers.add(randomNumber);
